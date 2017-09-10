@@ -4,7 +4,7 @@ from discord.ext import commands
 
 desc='Tutorial Bot'
 
-bot_prefix='?'
+bot_prefix=':stat'
 
 client = commands.Bot(description=desc, command_prefix=bot_prefix)
 pat = ':stat(?P<mat> [a-zA-Z]+)? (?P<winner>:[a-zA-Z]+:) (?P<coins>\d+)[c|C] [r|R](?P<round>\d+) vs(?P<l1> :[a-zA-Z]+:)?(?P<l2> :[a-zA-Z]+:)?(?P<l3> :[a-zA-Z]+:)?(?P<l4> :[a-zA-Z]+:)?(?P<l5> :[a-zA-Z]+:)?(?P<l6> :[a-zA-Z]+:)?'
