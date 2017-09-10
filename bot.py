@@ -2,7 +2,7 @@ import re
 import discord
 from discord.ext import commands
 
-desc='Tutorial Bot'
+desc='Scythe Statistics Keeper'
 
 bot_prefix=':stat'
 
@@ -45,10 +45,12 @@ async def on_message(message):
 			losers = [loserPat.match(f).group('faction').capitalize() for f in l if f]
 			for f in losers: 
 				if (f not in factions): errors.append("{} is not a valid faction".format(f))
+
 		else:
-			errors.append('Wrong Format')
+			errors.append('Wrong Format. You must use \':stat <player mat> :<faction>: <coins>c R<round> vs :<faction>: :<faction>: :<faction>: :<faction>: :<faction>: :<faction>:\'')
 		for e in errors: await client.send_message(message.channel, '```{}```'.format(e))
 		if not len(errors): await client.send_message(message.channel, '```stats saved: {} {} won with {} coins on round {} ```'.format(mat, winner, coins, round_))
-	await client.process_commands(message)﻿
 	
+	await client.process_commands(message)
+
 client.run('')
